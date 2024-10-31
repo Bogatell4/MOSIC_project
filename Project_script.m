@@ -14,11 +14,13 @@ sim('model');
 %plot(1e3*t,iL,'b'); hold on;
 %plot(1e3*t,io,'b'); hold on;
 
-n=10000; %with ts=0.1e-6 and n=10.000 will use this variable to analyze steady state from 10ms
+n=100000; %with ts=0.1e-6 and n=100.000 will use this variable to analyze steady state from 10ms
+
 ilmax=max(il(n+1:end));
+
 ilmin=min(il(n+1:end));
 ilmean=mean(il(n+1:end));
-ilripple=((ilmax-ilmean)/ilmean)+100;
+ilripple=((ilmax-ilmean)/ilmean)*100;
 
 vomax=max(vo(n+1:end));
 vomin=min(vo(n+1:end));
