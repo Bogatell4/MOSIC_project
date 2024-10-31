@@ -1,3 +1,20 @@
-Hola tontopolla;
-%hola 34we fsdf sdf
-%sdakfjbsaidfbias
+
+%clc; clear; close all;
+ts=0.1e-6; fs=100e3; Tend=50e-3;
+
+L=90e-6; C1=100e-6; C2=100e-6;
+
+Vi=24; voref = 96; 
+
+kp1=0.01; kp2=0.01; ki=2000;
+
+R1=18.432; %Calculated from Vout 96V and nominal power 500W
+
+sim('model');
+%plot(1e3*t,iL,'b'); hold on;
+%plot(1e3*t,io,'b'); hold on;
+plot(1e3*t,vo); grid on; hold on; 
+plot(1e3*t,d);
+legend('vo - output voltage');
+xlabel('time (ms)'); ylabel('vo(V), DC');
+
